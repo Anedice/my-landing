@@ -1,0 +1,286 @@
+:root {
+  --background: #fdf6e7;
+  --green: #b9c36e;
+  --dark-green: #7f9e54;
+  --button: #e26d5c;
+  --field: #d9c3a5;
+  --brown: #a75439;
+  --placeholder: #998673;
+  --text: #000;
+  --btn-hover: #df3d26;
+  --extra-green: #bfd32b;
+  --extra-brown: #712a12;
+  --shadow: #a7543966;
+  --title: "Lora", serif;
+  --para: "Nunito", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--para);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--title);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Хедер */
+
+header {
+    background-color: var(--green);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+}
+
+.logo-img {
+    width: 28px;
+}
+
+.nav {
+    display: flex;
+    gap: 100px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none;
+}
+
+/* Hero секція */
+
+#hero {
+    padding: 100px 0;
+}
+
+#hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    align-items: center;
+}
+
+.hero-title,
+.hero-text,
+.hero-btns {
+    grid-column: 1;
+}
+
+.hero-img {
+    grid-column: 2;
+    grid-row: 1 / 4;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.hero-text {
+font-size: 18px;
+margin-bottom: 40px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 30px;
+} 
+
+.btn-1,
+.btn-2 {
+    padding: 12px 24px;
+    border: 2px solid var(--button);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    /* cursor: pointer; */
+}
+
+.btn-1 {
+    background-color: var(--button);
+    color: #fff;
+}
+
+.btn-1:hover {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    box-shadow: 0 4px 16px var(--shadow);
+}
+
+.btn-2 {
+    color: var(--button);
+}
+
+.btn-2:hover {
+    color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    box-shadow: 0 4px 16px var(--shadow);
+}
+
+/* Про нас */
+
+#about {
+    padding: 60px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.about-card {
+    background-color: var(--green);
+    padding: 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.about-card:hover {
+    background-color: var(--extra-green);
+    box-shadow: 0 4px 16px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.small-title {
+    font-family: var(--para);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+/* книжка */
+
+#book {
+    padding: 60px 0;
+}
+
+.book-card {
+    display: flex;
+    gap: 40px;
+    padding: 28px;
+    background-color: var(--brown);
+    color: #fff;
+    border-radius: 12px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.book-card:hover {
+    background-color: var(--extra-brown);
+    box-shadow: 0 4px 16px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.book-card-img {
+    width: 173px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.book-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card-text p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.btn-purchase {
+    display: block;
+    background-color: #f9eded;
+    color: var(--brown);
+    padding: 14px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-top: 18px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.btn-purchase:hover {
+    background-color: #e0cece;
+    color: var(--extra-brown);
+}
+
