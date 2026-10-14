@@ -11,8 +11,6 @@ burger.addEventListener("click", function () {
 // форма
 
 const form = document.querySelector(".form");
-const success = document.querySelector(".form-success");
-
 const firstName = document.querySelector("#first-name");
 const surname = document.querySelector("#surname");
 const email = document.querySelector("#email");
@@ -78,8 +76,7 @@ function checkPhone() {
 }
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  success.classList.remove("show");
+  event.preventDefault();;
 
   const nameOk = checkRequired(firstName, "Введіть ім’я");
   const surnameOk = checkRequired(surname, "Введіть прізвище");
@@ -87,7 +84,7 @@ form.addEventListener("submit", function (event) {
   const phoneOk = checkPhone();
 
   if (nameOk && surnameOk && emailOk && phoneOk) {
-    success.classList.add("show");
+    alert("Дякуємо! Ваша форма успішно відправлена.");
     form.reset();
 
     document.querySelectorAll(".form-field").forEach(function (field) {
