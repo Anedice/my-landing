@@ -76,7 +76,7 @@ function checkPhone() {
 }
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault();;
+  event.preventDefault();
 
   const nameOk = checkRequired(firstName, "Введіть ім’я");
   const surnameOk = checkRequired(surname, "Введіть прізвище");
