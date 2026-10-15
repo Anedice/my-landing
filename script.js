@@ -8,6 +8,13 @@ burger.addEventListener("click", function () {
   nav.classList.toggle("open");
 });
 
+document.querySelectorAll(".nav-link").forEach(function (link) {
+  link.addEventListener("click", function () {
+    burger.classList.remove("open");
+    nav.classList.remove("open");
+  });
+});
+
 // форма
 
 const form = document.querySelector(".form");
@@ -92,6 +99,8 @@ form.addEventListener("submit", function (event) {
     });
   }
 });
+
+// прибирання підсвітки
 
 [firstName, surname, email, phone].forEach(function (input) {
   input.addEventListener("input", function () {
